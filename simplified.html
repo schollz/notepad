@@ -1,0 +1,93 @@
+<html>
+
+<head>
+  <style>
+    body#pad.light textarea {
+      background-color: #fff;
+      color: #000;
+    }
+
+    body#pad,
+    body#pad textarea {
+      transition-duration: .25s;
+      transition-property: background-color, color;
+    }
+
+    body#pad textarea,
+    body#pad textarea:focus {
+      border: 0;
+      outline: 0;
+    }
+
+    body#pad textarea {
+      position: fixed;
+      top: 0.1em;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding-top: 1em;
+      padding-bottom: 1em;
+      font-size: 1.2em;
+      line-height: 1.4;
+      letter-spacing: .6px;
+      box-sizing: border-box;
+      resize: none;
+      font-family: 'Open Sans', 'Segoe UI', Tahoma, Arial, sans-serif;
+    }
+
+    @media all and (min-width: 5em) {
+      body#pad textarea {
+        padding-left: 1em;
+        padding-right: 1em;
+      }
+    }
+
+    @media all and (min-width: 50em) {
+      body#pad textarea {
+        padding-left: 10%;
+        padding-right: 10%;
+      }
+    }
+
+    @media all and (min-width: 60em) {
+      body#pad textarea {
+        padding-left: 15%;
+        padding-right: 15%;
+      }
+    }
+
+    @media all and (min-width: 70em) {
+      body#pad textarea {
+        padding-left: 20%;
+        padding-right: 20%
+      }
+    }
+
+    @media all and (min-width: 85em) {
+      body#pad textarea {
+        padding-left: 25%;
+        padding-right: 25%
+      }
+    }
+
+    @media all and (min-width: 105em) {
+      body#pad textarea {
+        padding-left: 30%;
+        padding-right: 30%
+      }
+    }
+
+    .pad-theme-transition {
+      transition-property: background-color, color;
+      transition-duration: .25s
+    }
+  </style>
+</head>
+
+<body id="pad" class="light">
+  <textarea id="writer" placeholder="Write..." class="norm" autofocus></textarea>
+</body>
+
+</html>
