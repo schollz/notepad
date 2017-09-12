@@ -1,19 +1,31 @@
+var saved = true;
+
 $(document).ready(function(){
+  $('#note').keydown(function(){
+    if (saved == true) {
+      console.log('unsaved!')
+      $("#note").removeClass('saved');      
+      $("#note").addClass('unsaved');      
+      saved = false;
+    }
+  });
   $('#note').keyup(debounce(function(){
     localStorage.setItem("note", $(this).val());
-    console.log('dbounce test..');
-    $("#flash").removeClass('hidden');
+    console.log('saved!');
+    $("#note").removeClass('unsaved');      
+    $("#note").addClass('saved');      
+    saved = true;
   },500));
 
   if(localStorage.getItem("note") && localStorage.getItem("note")!=''){
     var noteItem = localStorage.getItem("note")
     $('#note').val(noteItem);
   }
+  $("#note").addClass('unsaved'); 
 });
 
 setInterval(function() {
       $("#flash").addClass('hidden');
-      //alert('test');
   }, 5000);
 
 function debounce(func, wait, immediate) {
